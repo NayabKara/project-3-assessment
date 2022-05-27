@@ -1,40 +1,38 @@
 {% extends 'base.html' %}
-
 {% block content %}
+
   <h1>Wacky Widgets </h1>
-  {% if widget_list|length == 0 %}
- <h3> No Widgets exist yet</h3>
+  {% if Widget|length == 0 %}
+    <h3> No Widgets exist yet</h3>
   {% else %}
-  {% for widget in widgets %}
-  <a href="{% url 'detail' widget.id %}">
-    <table class="table"> 
-      <tr>
-        <th>Desription</th>
-        <th>Quantity</th>
-        <th>Delete</th>
-      </tr>
-      <tr>
-        <td>{{widget.description}}</td>
-        <td>{{widget.quantity}}</td>
-        <td>{{widget.delete}}
-          <a href="X" id="delete">X</a>
-        </td>
-      </tr>
-    </table>
-{% endfor %}
-
-{% endif %}
-
+    {% for widget in widgets %}
+    <a href="{% url 'detail' widget.id %}">
+      <table class="table"> 
+        <tr>
+          <th>Desription</th>
+          <th>Quantity</th>
+         <th>Delete</th>
+        </tr>
+         <tr>
+          <td>{{widget.description}}</td>
+          <td>{{widget.quantity}}</td>
+          <td>{{widget.delete}}
+            <a href="X" id="delete">X</a>
+          </td>
+        </tr>
+      </table>
+  {% endfor %}
+  {% endif %}
   <hr>
   <h4> Add Widget </h4>
-  <form class=pure-form>
-    <label for="description">Description</label>
-    <input type="text">
-    <br>
-    <br>
-    <label for="quantity">Quantity</label>
-    <input type="text">
-  </form>
+    <form class=pure-form>
+      <label for="description">Description</label>
+        <input type="text">
+      <br>
+      <br>
+      <label for="quantity">Quantity</label>
+        <input type="text">
+    </form>
   <br>
   <button type="formaction" class="pure-button">Add Widget</button>
 

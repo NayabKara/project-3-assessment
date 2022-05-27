@@ -8,3 +8,6 @@ class Widget(models.Model):
   def __str__(self):
     return self.description
     return self.quantity
+
+widget = models.ForeignKey(Widget, on_delete=models.CASCADE)
+
