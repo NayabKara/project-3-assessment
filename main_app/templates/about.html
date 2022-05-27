@@ -6,7 +6,8 @@
  <h3> No Widgets exist yet</h3>
   {% else %}
   {% for widget in widgets %}
-    <table> 
+  <a href="{% url 'detail' widget.id %}">
+    <table class="table"> 
       <tr>
         <th>Desription</th>
         <th>Quantity</th>
@@ -15,7 +16,9 @@
       <tr>
         <td>{{widget.description}}</td>
         <td>{{widget.quantity}}</td>
-        <td>{{widget.delete}}</td>
+        <td>{{widget.delete}}
+          <a href="X" id="delete">X</a>
+        </td>
       </tr>
     </table>
 {% endfor %}
@@ -33,7 +36,7 @@
     <input type="text">
   </form>
   <br>
-  <button type="button">Add Widget</button>
+  <button type="formaction" class="pure-button">Add Widget</button>
 
 
 {% endblock%}

@@ -6,4 +6,5 @@ class Widget(models.Model):
   quantity = models.IntegerField()
 
   def __str__(self):
-    return self.name
+    return self.description
+    return self.quantity
